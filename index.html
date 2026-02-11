@@ -319,7 +319,7 @@
 			clevertap.event.push('Page Browsed')
 		}
 		function onBoxHTML() {
-			clevertap.event.push('Alert');
+			clevertap.event.push('Order Paid');
 		}
 		function onInterstitialHTMLClicked() {
 			clevertap.event.push('Partner Sync')
@@ -400,6 +400,7 @@
 		</div>
 
 		<hr />
+		<div id="div-ct-banner"></div>
 
 		<div class="nav-section">
 			<div id="userAgent"></div>
@@ -411,7 +412,6 @@
 			</div>
 			<div id="gcookie"></div>
 		</div>
-		<div id="div-ct-banner" style="height: 800px;"></div>
 	</div>
 	<script>
 		document.getElementById("userAgent").innerHTML = navigator.userAgent;
