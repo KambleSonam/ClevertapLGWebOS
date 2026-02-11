@@ -4,7 +4,7 @@
 <head>
 	<meta name="viewport" content="width=1920, height=1080" />
 	<meta charset="UTF-8">
-	<title>CleverTap Tizen Test</title>
+	<title>CleverTap WebOS Test</title>
 	<script src="$WEBAPIS/webapis/webapis.js"></script>
 	<link rel="manifest" href="/web-sdk-test/manifest.json">
 	<style>
@@ -202,7 +202,7 @@
 	<script type="text/javascript">
 		var clevertap = {
 			event: [], profile: [], account: [], onUserLogin: [], notifications: [], privacy: [], config: {
-				isTV: true, enableCThandler: true
+				enableTVControls: true
 			}
 		};
 		clevertap.account.push({ "id": '884-5ZW-8Z7Z' }, 'sk1-staging-4', 'wzrkt.com');
@@ -306,16 +306,17 @@
 			console.log(customerType);
 		}
 		function onPopupClicked() {
-			clevertap.event.push('triggerTest');
+			clevertap.event.push('Hour check');
+			clevertap.event.push('Order Paid');
 		}
 		function onInterstitialClicked() {
 			clevertap.event.push('Checkout SDK')
 		}
 		function onBannerClicked() {
-			clevertap.event.push('Page Browsed');
+			clevertap.event.push('triggerTestBanner');
 		}
 		function onImageOnlyClicked() {
-			clevertap.event.push('Customer Created')
+			clevertap.event.push('Page Browsed')
 		}
 		function onBoxHTML() {
 			clevertap.event.push('Alert');
@@ -353,6 +354,7 @@
 				<button data-list-item onclick="onPopupClicked()">Web Popup Box</button>
 				<button data-list-item onclick="onBannerClicked()">Web Popup Banner</button>
 				<button data-list-item onclick="onInterstitialClicked()">Web Popup Interstitial</button>
+				<button data-list-item id="bell-selector">Inbox</button>
 			</div>
 			<div class="nav-row">
 				<button data-list-item onclick="onBoxHTML()">Web Popup Box HTML</button>
